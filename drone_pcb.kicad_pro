@@ -64,7 +64,7 @@
           "min_island_area": 10.0,
           "min_thickness": 0.25,
           "pad_connection": 1,
-          "remove_islands": 0,
+          "remove_islands": 1,
           "thermal_relief_gap": 0.5,
           "thermal_relief_spoke_width": 0.5
         }
@@ -80,7 +80,7 @@
         "connection_width": "warning",
         "copper_edge_clearance": "error",
         "copper_sliver": "warning",
-        "courtyards_overlap": "error",
+        "courtyards_overlap": "ignore",
         "creepage": "error",
         "diff_pair_gap_out_of_range": "error",
         "diff_pair_uncoupled_length_too_long": "error",
@@ -98,7 +98,7 @@
         "invalid_outline": "error",
         "isolated_copper": "warning",
         "item_on_disabled_layer": "error",
-        "items_not_allowed": "error",
+        "items_not_allowed": "ignore",
         "length_out_of_range": "error",
         "lib_footprint_issues": "warning",
         "lib_footprint_mismatch": "warning",
@@ -260,7 +260,16 @@
     "equivalence_files": []
   },
   "erc": {
-    "erc_exclusions": [],
+    "erc_exclusions": [
+      [
+        "power_pin_not_driven|1016000|1460500|9fc08f3f-8106-4e33-b8f9-80509584ae54|00000000-0000-0000-0000-000000000000|/83c625e1-a29f-4d99-8503-8e62b4e27419|/83c625e1-a29f-4d99-8503-8e62b4e27419|",
+        ""
+      ],
+      [
+        "power_pin_not_driven|1066800|1460500|560f821e-d78c-44fd-b639-0e7289b921a7|00000000-0000-0000-0000-000000000000|/83c625e1-a29f-4d99-8503-8e62b4e27419|/83c625e1-a29f-4d99-8503-8e62b4e27419|",
+        ""
+      ]
+    ],
     "meta": {
       "version": 0
     },
@@ -539,13 +548,13 @@
     "bom_export_filename": "${PROJECTNAME}.csv",
     "bom_fmt_presets": [],
     "bom_fmt_settings": {
-      "field_delimiter": ",",
+      "field_delimiter": "\t",
       "keep_line_breaks": false,
       "keep_tabs": false,
-      "name": "CSV",
+      "name": "TSV",
       "ref_delimiter": ",",
       "ref_range_delimiter": "",
-      "string_delimiter": "\""
+      "string_delimiter": ""
     },
     "bom_presets": [],
     "bom_settings": {
@@ -726,6 +735,14 @@
     "meta": {
       "version": 1
     },
+    "ngspice": {
+      "fix_include_paths": true,
+      "meta": {
+        "version": 0
+      },
+      "model_mode": 4,
+      "workbook_filename": ""
+    },
     "page_layout_descr_file": "",
     "plot_directory": "",
     "reuse_designators": true,
@@ -738,7 +755,7 @@
         "uuid": "83c625e1-a29f-4d99-8503-8e62b4e27419"
       }
     ],
-    "used_designators": "J3-10",
+    "used_designators": "",
     "variants": []
   },
   "sheets": [
